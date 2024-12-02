@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    width: 100%;
+    background-color: rgb(178, 255, 168);
+    align-items: center;
+    justify-content: space-around;
+    height: 100px;
+    position: fixed
+}
+
+.default_item {
+    font-size: 28;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    transition: color 0.2s linear;
+    z-index: 100;
+}
+
+.hovered_item {
+    font-size: 28;
+    font-style: normal;
+    text-decoration: none;
+    color: rgb(147, 147, 147);
+    cursor: pointer;
+    transition: color 0.2s linear;
+}

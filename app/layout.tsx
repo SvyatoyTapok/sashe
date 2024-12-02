@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { Cormorant, RalewayFont } from './utils/fonts'
+import { Cormorant } from './utils/fonts'
+import './utils/null.css'
+import styles from './styles.module.css'
 
 export const metadata: Metadata = {
   title: "Sashè",
@@ -7,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html className={`${Cormorant.className, RalewayFont.className}`}>
-      <body>
+    <html className={Cormorant.className}>
+      <body className={styles.mainContainer}>
         {children}
       </body>
     </html>

@@ -1,0 +1,45 @@
+.container {
+    align-self: center;
+    padding-top: 100px;
+    padding-left: 100px;
+    display: flex;
+    background-color: brown;
+}
+
+.mainText {
+    font-size: 46;
+    font-weight: 500;
+}
+
+.secondText {
+    font-size: 38;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.textContainer {
+    text-align: left;
+    justify-content: center;
+}
+
+.firstImage {
+    width: 200;
+    height: 300;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.secondImage {
+    width: 200;
+    height: 300;
+    background-color: burlywood;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.imageContainer {
+    display: flex;
+}

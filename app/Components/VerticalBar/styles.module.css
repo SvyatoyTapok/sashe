@@ -1,0 +1,24 @@
+.container {
+    height: 100vh;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(178, 255, 168);
+    position: fixed;
+}
+
+.decorateItem {
+    width: 2px;
+    background-color: black;
+    height: 150px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.item {
+    text-decoration: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
