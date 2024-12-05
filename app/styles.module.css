@@ -1,3 +1,4 @@
-.mainContainer {
-    background-color: #FFFFFF;
+.container {
+    justify-content: center;
+    align-items: center;
 }

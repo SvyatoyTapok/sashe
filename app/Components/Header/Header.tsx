@@ -13,6 +13,7 @@ export default function Header() {
         <div className={styles.container}>
             <a><Image src={sticker} width={80} height={80} alt='sticker' /></a>
             {headerItems.map(item =>
+
                 <a
                     key={item.id}
                     onMouseLeave={() => setHover(0)}
@@ -21,7 +22,10 @@ export default function Header() {
                     className={hover === item.id ? styles.hovered_item : styles.default_item}
                 >
                     {item.text}
-                </a>)}
+                    <p className={hover === item.id ? styles.hovered_underline : styles.underline}></p>
+                </a>
+
+            )}
         </div>
     )
 }

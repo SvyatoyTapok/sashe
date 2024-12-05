@@ -5,20 +5,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(178, 255, 168);
+    background-color: rgb(226, 216, 255);
     position: fixed;
 }
 
 .decorateItem {
     width: 2px;
     background-color: black;
-    height: 150px;
+    height: 100px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
 
 .item {
-    text-decoration: none;
-    margin-bottom: 20px;
     margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: 0.33s ease;
+}
+
+.hovered_item {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-decoration: none;
+    filter: invert(100%);
+    transition: 0.33s ease;
 }
