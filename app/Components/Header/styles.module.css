@@ -5,7 +5,8 @@
     align-items: center;
     justify-content: space-around;
     height: 100px;
-    position: fixed
+    position: fixed;
+    z-index: 100;
 }
 
 .underline {

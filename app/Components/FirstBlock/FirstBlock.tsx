@@ -4,6 +4,7 @@ import styles from './styles.module.css'
 import Button from '../Button/Button';
 import play from '../../images/play.svg'
 import Image from 'next/image';
+
 export default function FirstBlock() {
     const [hover, setHover] = useState(0);
 
