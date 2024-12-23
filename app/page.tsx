@@ -1,14 +1,13 @@
 import Header from "./Components/Header/Header"
 import VerticalBar from "./Components/VerticalBar/VerticalBar"
-import Content from './Components/Content/Content'
-import styles from './styles.module.css'
+import FirstBlock from "./Components/FirstBlock/FirstBlock"
 
 export default function HomePage() {
     return (
         <>
             <Header />
             <VerticalBar />
-            <Content />
+            <FirstBlock />
         </>
     )
 }

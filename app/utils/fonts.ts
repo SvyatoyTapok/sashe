@@ -8,6 +8,6 @@ export const Cormorant = Cormorant_Garamond({
 
 export const RalewayFont = Raleway({
     subsets: ['cyrillic'],
-    weight: ['100', '200', '300', '400', '500'],
+    weight: ['300'],
     style: ['normal'],
 })

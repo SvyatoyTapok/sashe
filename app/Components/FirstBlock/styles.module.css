@@ -1,0 +1,117 @@
+.container {
+    padding-top: 100px;
+    display: flex;
+    margin-left: 100px;
+    padding-left: 100px;
+    justify-content: center;
+}
+
+.mainText {
+    font-size: 42;
+    font-weight: 500;
+}
+
+.secondText {
+    margin-top: 30px;
+    font-size: 28;
+    font-family: Raleway;
+}
+
+.textContainer {
+    margin-top: 100px;
+    text-align: left;
+    width: 750px;
+    align-items: center;
+}
+
+.firstImage {
+    margin-top: 50px;
+    width: 300;
+    height: 400;
+    background-color: blue;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hoveredFirstImage {
+    margin-top: 50px;
+    transition: 0.33s ease;
+    width: 290;
+    height: 390;
+    border: solid, 1px black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    z-index: -1;
+}
+
+.secondImage {
+    width: 200;
+    height: 200;
+    background-color: burlywood;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    right: 80%;
+    top: 60%;
+}
+
+.firstFrame {
+    margin-top: 25px;
+    margin-left: 25px;
+    transition: 0.33s ease;
+    width: 290;
+    height: 390;
+    border: solid, 1px black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    z-index: -1;
+}
+
+.secondFrame {
+    transition: 0.33s ease;
+    width: 200;
+    height: 200;
+    border: solid, 1px black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    right: 90%;
+    top: 50%;
+    z-index: -1;
+}
+
+.hoveredSecondImage {
+    transition: 0.33s ease;
+    width: 198;
+    height: 198;
+    border: solid, 1px black;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    right: 80%;
+    top: 60%;
+    z-index: -1;
+}
+
+.imageContainer {
+    display: flex;
+    position: relative;
+}
+
+.videoInfo {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18;
+    font-family: Raleway;
+}
