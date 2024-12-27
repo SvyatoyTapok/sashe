@@ -43,7 +43,7 @@ export default function VerticalBar() {
                 onMouseEnter={() => setHover(3)}
                 onMouseLeave={() => setHover(0)}
                 target='_'
-                href='https://instagram.com'>
+                href='https://www.instagram.com/a.osssmanova'>
                 <Image
                     className={hover === 3 ? styles.hovered_item : styles.item}
                     src={inst_icon}
