@@ -5,3 +5,14 @@
     text-align: center;
     cursor: pointer
 }
+
+.clickedButton {
+    transition: 0.33s ease;
+    transform: scale(0.8);
+}
+
+.defaultButton {
+    transition: 0.33s ease;
+    transform: scale(1);
+    background-color: black;
+}

@@ -12,7 +12,10 @@ export default function FirstBlock() {
         <div className={styles.container}>
             <div className={styles.textContainer}>
                 <div className={styles.mainText}>УСЛУГИ МАНИКЮРА В НИЖНЕМ НОВГОРОДЕ</div>
-                <div className={styles.secondText}>Запишись онлайн и получи скидку 10% на первое посещение</div>
+                <div
+                    className={styles.secondText}>Запишись онлайн и получи скидку 10% на первое посещение
+                </div>
+
                 <Button
                     text={'Онлайн запись'}
                     width={300}
@@ -49,6 +52,6 @@ export default function FirstBlock() {
                 <div
                     className={hover === 2 ? styles.hoveredSecondImage : styles.secondFrame}></div>
             </div>
-        </div>
+        </div >
     )
 }

@@ -40,9 +40,10 @@ export default function TableComponent() {
                         className={
                             clicked === 3 ? styles.clickedPageText : styles.pageText}
                         onClick={() => setClicked(3)}
-                    ><p
-                        className={hover === 3 ? styles.hoveredPageText : styles.nothing}
-                    >{'Дизайн'}</p></div>
+                    >
+                        <p
+                            className={hover === 3 ? styles.hoveredPageText : styles.nothing}
+                        >{'Дизайн'}</p></div>
                 </div>
                 <div className={styles.underDecorations}>
                     <div className={

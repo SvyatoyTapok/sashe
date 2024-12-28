@@ -33,3 +33,13 @@
     filter: invert(100%);
     transition: 0.33s ease;
 }
+
+.defaultItem {
+    transition: 0.33s ease;
+    transform: scale(1);
+}
+
+.clickedItem {
+    transition: 0.33s ease;
+    transform: scale(0.8, 0.8);
+}

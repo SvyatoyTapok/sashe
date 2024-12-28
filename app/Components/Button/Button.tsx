@@ -21,11 +21,16 @@ export default function Button({
     borderRadius,
     hoveredColor
 }: ButtonType) {
+
     const [hover, setHover] = useState(false)
-
-
+    const [isClicked, setClicked] = useState(false)
+    const handleClick = () => {
+        setClicked(true);
+        setTimeout(() => setClicked(false), 100);
+    };
     return (
         <div
+            onClick={handleClick}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
             style={{
@@ -36,6 +41,7 @@ export default function Button({
                 fontSize: fontSize ? fontSize : 24,
                 borderRadius: borderRadius ? borderRadius : 0,
                 transition: '0.33s ease',
+                transform: isClicked ? 'scale(0.9)' : 'scale(1)',
             }}
             className={styles.container}
         >{text}</div>

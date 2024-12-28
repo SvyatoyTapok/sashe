@@ -9,15 +9,23 @@ import inst_icon from '../../images/inst.svg'
 export default function VerticalBar() {
 
     const [hover, setHover] = useState(0)
+    const [isClicked, setIsClicked] = useState(0)
 
+    const handleClick = (item: number) => {
+        setIsClicked(item);
+        setTimeout(() => setIsClicked(0), 100);
+    };
     return (
         <div className={styles.container}>
             <div className={styles.decorateItem}></div>
             <a
                 onMouseEnter={() => setHover(1)}
                 onMouseLeave={() => setHover(0)}
+                onClick={() => handleClick(1)}
                 target='_'
-                href='https://vk.com/ossssmanova'>
+                href='https://vk.com/ossssmanova'
+                className={isClicked === 1 ? styles.clickedItem : styles.defaultItem}
+            >
                 <Image
                     className={hover === 1 ? styles.hovered_item : styles.item}
                     src={vk_icon}
@@ -27,10 +35,13 @@ export default function VerticalBar() {
                 />
             </a>
             <a
+                onClick={() => handleClick(2)}
+                className={isClicked === 2 ? styles.clickedItem : styles.defaultItem}
                 onMouseEnter={() => setHover(2)}
                 onMouseLeave={() => setHover(0)}
                 target='_'
-                href='https://ttttt.me/osssmanova'>
+                href='https://ttttt.me/osssmanova'
+            >
                 <Image
                     className={hover === 2 ? styles.hovered_item : styles.item}
                     src={tg_icon}
@@ -42,6 +53,8 @@ export default function VerticalBar() {
             <a
                 onMouseEnter={() => setHover(3)}
                 onMouseLeave={() => setHover(0)}
+                onClick={() => handleClick(3)}
+                className={isClicked === 3 ? styles.clickedItem : styles.defaultItem}
                 target='_'
                 href='https://www.instagram.com/a.osssmanova'>
                 <Image
