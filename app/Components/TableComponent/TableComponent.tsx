@@ -2,11 +2,15 @@
 import { useState } from 'react'
 import StrokeTable from '../StrokeTable/StrokeTable'
 import styles from './style.module.css'
+import { tableElements } from '../../utils/mock'
 export default function TableComponent() {
-
+    type StrokeType = {
+        name: string,
+        price: number,
+        id: number
+    }
     const [clicked, setClicked] = useState(1)
     const [hover, setHover] = useState(0)
-
     return (
         <div className={styles.container}>
             <div className={styles.mainText}>
@@ -54,39 +58,14 @@ export default function TableComponent() {
                 </div>
             </div>
             <table className={styles.table}>
-                <tbody>
-                    <StrokeTable
-                        name='Маникюр без покрытия'
-                        price={700}
-                    />
-                    <StrokeTable
-                        name='Маникюр c однотонным покрытием гель-лак'
-                        price={1200}
-                    />
-                    <StrokeTable
-                        name='Маникюр с однотонным покрытием гель-лак (френч/лунки)'
-                        price={1400}
-                    />
-                    <StrokeTable
-                        name='Укрепление твёрдым гелем'
-                        price={400}
-                    />
-                    <StrokeTable
-                        name='Снятие наращивания'
-                        price={200}
-                    />
-                    <StrokeTable
-                        name='Снятие гель-лака'
-                        price={200}
-                    />
-                    <StrokeTable
-                        name='Ремонт 1 ногтя'
-                        price={100}
-                    />
-                    <StrokeTable
-                        name='Ремонт трещин перед покрытием'
-                        price={50}
-                    />
+                <tbody className={styles.tableBody}>
+                    {tableElements.map((item: StrokeType) => (
+                        <StrokeTable
+                            key={item.id}
+                            name={item.name}
+                            price={item.price}
+                        />
+                    ))}
                 </tbody>
             </table>
         </div>

@@ -2,7 +2,7 @@ import { Cormorant_Garamond, Raleway } from 'next/font/google'
 
 export const Cormorant = Cormorant_Garamond({
     subsets: ['cyrillic'],
-    weight: [ '300', '400', '500', '600', '700'],
+    weight: ['300', '400', '500', '600', '700'],
     style: ['italic', 'normal']
 })
 

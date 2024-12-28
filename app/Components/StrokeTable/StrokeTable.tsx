@@ -1,3 +1,4 @@
+import styles from './styles.module.css'
 type StrokeType = {
     name: string,
     price: number,
@@ -5,8 +6,8 @@ type StrokeType = {
 export default function StrokeTable({ name, price }: StrokeType) {
     return (
         <tr>
-            <th>{name}</th>
-            <th>{price} ₽</th>
+            <th className={styles.tableText}>{name}</th>
+            <th className={styles.tableText}>{price} ₽</th>
         </tr>
     )
 }
