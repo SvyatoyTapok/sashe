@@ -13,9 +13,6 @@ export default function TableComponent() {
     const [hover, setHover] = useState(0)
     return (
         <div className={styles.container}>
-            <div className={styles.mainText}>
-                <p>{'Услуги и цены'}</p>
-            </div>
             <div className={styles.pagesContainer}>
                 <div className={styles.textContainer}>
                     <div
