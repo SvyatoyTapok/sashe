@@ -9,7 +9,7 @@ export default function FirstBlock() {
     const [hover, setHover] = useState(0);
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id='start'>
             <div className={styles.textContainer}>
                 <div className={styles.mainText}>УСЛУГИ МАНИКЮРА В НИЖНЕМ НОВГОРОДЕ</div>
                 <div

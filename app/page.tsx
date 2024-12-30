@@ -8,9 +8,9 @@ export default function HomePage() {
         <>
             <FirstBlock />
             <SecondBlock />
-            <SectionName text='Услуги и цены' />
+            <SectionName scrollId='table' text='Услуги и цены' />
             <TableComponent />
-            <SectionName text='Обо мне' />
+            <SectionName scrollId='contacts' text='Обо мне' />
             <AboutBlock />
         </>
     )

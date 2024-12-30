@@ -12,7 +12,7 @@ export default function TableComponent() {
     const [clicked, setClicked] = useState(1)
     const [hover, setHover] = useState(0)
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id='table'>
             <div className={styles.pagesContainer}>
                 <div className={styles.textContainer}>
                     <div
