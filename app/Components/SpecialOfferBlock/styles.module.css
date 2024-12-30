@@ -1,4 +1,39 @@
 .container {
-    display: flex;
+    margin-top: 100px;
     background-color: #E4D8E2;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.wrapper {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 90%;
+}
+
+.textContainer {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainText {
+    font-size: 64px;
+    font-weight: 500;
+}
+
+.subText {
+    margin-top: 24px;
+    font-family: 'Raleway';
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

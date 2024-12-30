@@ -3,7 +3,8 @@
     height: 50px;
     align-content: center;
     text-align: center;
-    cursor: pointer
+    cursor: pointer;
+    font-weight: 500;
 }
 
 .clickedButton {
