@@ -12,14 +12,14 @@ export default function PersonItem({ image }: PersonProps) {
                     src={image}
                     alt="Description of the image"
                     width={300}
-                    height={300}
+                    height={400}
                 />
                 <div className={styles.descriptionBlock}>
                     <div className={styles.decorationText}></div>
                     <div className={styles.textContainer}>
                         <p className={styles.nameText}>Александра Османова</p>
                         <p className={styles.subText}>Мастер на все руки</p>
-                        <p className={styles.description}> Начинающий мастер маникюра и педикюра,
+                        <p className={styles.description}>Начинающий мастер маникюра и педикюра,
                             увлечённый красотой и индивидуальным подходом
                             к каждому клиенту. В работе важны аккуратность,
                             креативность и стерильность. Создаю стильные дизайны ногтей и

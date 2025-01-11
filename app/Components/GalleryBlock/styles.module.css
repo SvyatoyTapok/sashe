@@ -1,0 +1,53 @@
+.container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.carouselContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.window {
+    display: flex;
+    width: 40%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.imageStyle {
+    display: flex;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.imageContainer {
+    display: flex;
+    transition: 0.33s ease;
+}
+
+.navButton {
+    cursor: pointer;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.indicatorContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.indicatorItem {
+    width: 10;
+    height: 10;
+    margin-left: 6px;
+    margin-right: 6px;
+    border-radius: 5;
+    background-color: #E4D8E2;
+    transition: 0.33s ease;
+}

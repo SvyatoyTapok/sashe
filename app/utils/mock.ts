@@ -7,7 +7,7 @@ export const headerItems = [
     },
     {
         id: 2,
-        scrollId: 'portfolio',
+        scrollId: 'gallery',
         text: 'Портфолио',
         href: '#',
     },

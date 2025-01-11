@@ -3,6 +3,8 @@ import { useState } from 'react'
 import styles from './styles.module.css'
 import Button from '../Button/Button';
 import play from '../../images/play.svg'
+import manicure1 from '../../images/manicure1.jpg'
+import manicure2 from '../../images/manicure2.jpg'
 import Image from 'next/image';
 
 export default function FirstBlock() {
@@ -38,17 +40,21 @@ export default function FirstBlock() {
                 </div>
             </div>
             <div className={styles.imageContainer}>
-                <div
+                <Image
                     className={styles.firstImage}
                     onMouseEnter={() => setHover(1)}
                     onMouseLeave={() => setHover(0)}
-                ></div>
+                    src={manicure2}
+                    alt={'manicure2'}
+                ></Image>
                 <div className={hover === 1 ? styles.hoveredFirstImage : styles.firstFrame}></div>
-                <div
+                <Image
+                    src={manicure1}
+                    alt={'manicure1'}
                     className={styles.secondImage}
                     onMouseEnter={() => setHover(2)}
                     onMouseLeave={() => setHover(0)}
-                ></div>
+                ></Image>
                 <div
                     className={hover === 2 ? styles.hoveredSecondImage : styles.secondFrame}></div>
             </div>
