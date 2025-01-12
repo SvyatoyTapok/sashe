@@ -8,19 +8,24 @@ import chevronRight from '../../images/chevronRight.svg'
 import { useState } from 'react';
 export default function GalleryBlock() {
     const [currentPosition, setCurrentPosition] = useState(1)
-
-    const handleForwardClick = () => {
+    const [isClicked, setIsClicked] = useState(0)
+    const handleForwardClick = (item: number) => {
+        setIsClicked(item)
+        setTimeout(() => setIsClicked(0), 100)
         if (currentPosition === 3) { return } else { setCurrentPosition(currentPosition + 1) }
     }
 
-    const handleBackClick = () => {
+    const handleBackClick = (item: number) => {
+        setIsClicked(item)
+        setTimeout(() => setIsClicked(0), 100)
         if (currentPosition === 1) { return } else { setCurrentPosition(currentPosition - 1) }
     }
     return (
         <div className={styles.container}>
             <div className={styles.carouselContainer}>
-                <div className={styles.navButton} onClick={handleBackClick}>
+                <div className={styles.navButton} onClick={() => handleBackClick(1)}>
                     <Image
+                        className={isClicked === 1 ? styles.clicked : styles.notClicked}
                         width={60}
                         height={60}
                         src={chevronLeft}
@@ -36,25 +41,23 @@ export default function GalleryBlock() {
                         <Image
                             className={styles.imageStyle}
                             src={manicure2} alt='manicure'
-                            width={400}
-                            height={300}
+                            height={400}
                         />
                         <Image
                             className={styles.imageStyle}
                             src={manicure1} alt='manicure'
-                            width={400}
-                            height={300}
+                            height={400}
                         />
                         <Image
                             className={styles.imageStyle}
                             src={manicure2} alt='manicure'
-                            width={400}
-                            height={300}
+                            height={400}
                         />
                     </div>
                 </div>
-                <div className={styles.navButton} onClick={handleForwardClick}>
+                <div className={styles.navButton} onClick={() => handleForwardClick(2)}>
                     <Image
+                        className={isClicked === 2 ? styles.clicked : styles.notClicked}
                         width={60}
                         height={60}
                         src={chevronRight}

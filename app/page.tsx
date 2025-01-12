@@ -5,6 +5,7 @@ import TableComponent from "./Components/TableComponent/TableComponent"
 import SectionName from "./Components/SectionName/SectionName"
 import SpecialOfferBlock from "./Components/SpecialOfferBlock/SpecialOfferBlock"
 import GalleryBlock from "./Components/GalleryBlock/GalleryBlock"
+import Footer from "./Components/Footer/Footer"
 export default function HomePage() {
     return (
         <>
@@ -17,6 +18,8 @@ export default function HomePage() {
             <SpecialOfferBlock />
             <SectionName scrollId='gallery' text='Мои работы' />
             <GalleryBlock />
+            <SectionName scrollId='contacts' text='Контакты' />
+            <Footer />
         </>
     )
 }
