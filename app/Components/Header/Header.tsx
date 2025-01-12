@@ -31,7 +31,7 @@ export default function Header() {
                     className={
                         hover === item.id ? styles.hovered_item : styles.default_item}>
                     {item.text}
-                    <p className={hover === item.id ? styles.hovered_underline : styles.underline}></p>
+                    <div className={hover === item.id ? styles.hovered_underline : styles.underline}></div>
                 </Link>
             )}
         </div>

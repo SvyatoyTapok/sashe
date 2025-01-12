@@ -24,7 +24,7 @@
 }
 
 .default_item {
-    font-size: 32;
+    font-size: 32px;
     font-style: normal;
     text-decoration: none;
     color: black;
@@ -43,7 +43,7 @@
     padding-bottom: 24px;
     padding-right: 24px;
     text-decoration: underline;
-    font-size: 32;
+    font-size: 32px;
     font-style: normal;
     text-decoration: none;
     color: rgb(255, 255, 255);

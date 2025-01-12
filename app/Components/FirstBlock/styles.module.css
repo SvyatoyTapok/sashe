@@ -7,14 +7,14 @@
 }
 
 .mainText {
-    font-size: 42;
+    font-size: 42px;
     font-weight: 500;
 }
 
 .secondText {
     margin-top: 30px;
-    font-size: 28;
-    font-family: Raleway;
+    font-size: 28px;
+    font-family: 'Raleway';
     font-weight: 100;
 }
 
@@ -27,8 +27,6 @@
 
 .firstImage {
     margin-top: 50px;
-    width: 300;
-    height: 400;
     background-color: blue;
     justify-content: center;
     align-items: center;
@@ -39,8 +37,8 @@
 .hoveredFirstImage {
     margin-top: 50px;
     transition: 0.33s ease;
-    width: 297;
-    height: 397;
+    width: 297px;
+    height: 397px;
     border: solid, 1px black;
     justify-content: center;
     align-items: center;
@@ -50,8 +48,6 @@
 }
 
 .secondImage {
-    width: 200;
-    height: 200;
     background-color: burlywood;
     justify-content: center;
     align-items: center;
@@ -65,8 +61,8 @@
     margin-top: 25px;
     margin-left: 25px;
     transition: 0.33s ease;
-    width: 297;
-    height: 397;
+    width: 297px;
+    height: 397px;
     border: solid, 1px black;
     justify-content: center;
     align-items: center;
@@ -77,8 +73,8 @@
 
 .secondFrame {
     transition: 0.33s ease;
-    width: 200;
-    height: 200;
+    width: 200px;
+    height: 200px;
     border: solid, 1px black;
     justify-content: center;
     align-items: center;
@@ -91,8 +87,8 @@
 
 .hoveredSecondImage {
     transition: 0.33s ease;
-    width: 198;
-    height: 198;
+    width: 198px;
+    height: 198px;
     border: solid, 1px black;
     justify-content: center;
     align-items: center;
@@ -112,7 +108,7 @@
     margin-top: 50px;
     display: inline-flex;
     align-items: center;
-    font-size: 18;
+    font-size: 18px;
     font-family: Raleway;
     cursor: pointer;
 }

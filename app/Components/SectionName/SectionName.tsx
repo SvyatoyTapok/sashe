@@ -7,7 +7,7 @@ type SectionNameType = {
 export default function SectionName({ text, scrollId }: SectionNameType) {
     return (
         <div className={styles.mainText} id={scrollId}>
-            <p>{text}</p>
+            <div>{text}</div>
         </div>
     );
 }

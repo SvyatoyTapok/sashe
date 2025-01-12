@@ -31,7 +31,7 @@ export default function FirstBlock() {
                 <div className={styles.videoInfo}>
                     <div className={styles.videoText}>Посмотрите видео о моей студии</div>
                     <Image
-                        style={{ marginLeft: 10 }}
+                        style={{ marginLeft: '10px' }}
                         alt='play'
                         src={play}
                         width={30}
@@ -41,6 +41,8 @@ export default function FirstBlock() {
             </div>
             <div className={styles.imageContainer}>
                 <Image
+                    width={300}
+                    height={400}
                     className={styles.firstImage}
                     onMouseEnter={() => setHover(1)}
                     onMouseLeave={() => setHover(0)}
@@ -49,6 +51,8 @@ export default function FirstBlock() {
                 ></Image>
                 <div className={hover === 1 ? styles.hoveredFirstImage : styles.firstFrame}></div>
                 <Image
+                    width={200}
+                    height={200}
                     src={manicure1}
                     alt={'manicure1'}
                     className={styles.secondImage}
