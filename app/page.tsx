@@ -1,3 +1,4 @@
+'use client'
 import AboutBlock from "./Components/AboutBlock/AboutBlock"
 import FirstBlock from "./Components/FirstBlock/FirstBlock"
 import SecondBlock from "./Components/SecondBlock/SecondBlock"
@@ -6,6 +7,7 @@ import SectionName from "./Components/SectionName/SectionName"
 import SpecialOfferBlock from "./Components/SpecialOfferBlock/SpecialOfferBlock"
 import GalleryBlock from "./Components/GalleryBlock/GalleryBlock"
 import Footer from "./Components/Footer/Footer"
+
 export default function HomePage() {
     return (
         <>

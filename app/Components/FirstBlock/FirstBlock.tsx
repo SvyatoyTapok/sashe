@@ -3,21 +3,15 @@ import { useState } from 'react'
 import styles from './styles.module.css'
 import Button from '../Button/Button';
 import play from '../../images/play.svg'
-import manicure1 from '../../images/manicure1.jpg'
-import manicure2 from '../../images/manicure2.jpg'
 import Image from 'next/image';
 
 export default function FirstBlock() {
     const [hover, setHover] = useState(0);
-
     return (
         <div className={styles.container} id='start'>
             <div className={styles.textContainer}>
                 <div className={styles.mainText}>УСЛУГИ МАНИКЮРА В НИЖНЕМ НОВГОРОДЕ</div>
-                <div
-                    className={styles.secondText}>Запишись онлайн и получи скидку 10% на первое посещение
-                </div>
-
+                <div className={styles.secondText}>Запишись онлайн и получи скидку 10% на первое посещение</div>
                 <Button
                     text={'Онлайн запись'}
                     width={300}
@@ -46,14 +40,14 @@ export default function FirstBlock() {
                     className={styles.firstImage}
                     onMouseEnter={() => setHover(1)}
                     onMouseLeave={() => setHover(0)}
-                    src={manicure2}
+                    src={'http://localhost:4300/images/big.jpg'}
                     alt={'manicure2'}
                 ></Image>
                 <div className={hover === 1 ? styles.hoveredFirstImage : styles.firstFrame}></div>
                 <Image
                     width={200}
                     height={200}
-                    src={manicure1}
+                    src={'http://localhost:4300/images/small.jpg'}
                     alt={'manicure1'}
                     className={styles.secondImage}
                     onMouseEnter={() => setHover(2)}

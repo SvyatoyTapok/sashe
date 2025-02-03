@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import styles from './styles.module.css'
 import Image from 'next/image'
-import sticker from '../../images/sticker.png'
 import { headerItems } from '@/app/utils/mock'
 import { Link } from 'react-scroll/modules'
 
@@ -16,7 +15,13 @@ export default function Header() {
     };
     return (
         <div className={styles.container}>
-            <Link style={{ cursor: 'pointer' }} smooth={true} duration={600} offset={-100} to='start'><Image src={sticker} width={80} height={80} alt='sticker' /></Link>
+            <Link style={{ cursor: 'pointer' }} smooth={true} duration={600} offset={-100} to='start'>
+                <Image src={'http://localhost:4300/images/icon.png'}
+                    width={80}
+                    height={80}
+                    alt='sticker'
+                />
+            </Link>
             {headerItems.map(item =>
                 <Link
                     smooth={true}

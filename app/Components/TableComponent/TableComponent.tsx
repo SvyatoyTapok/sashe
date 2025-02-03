@@ -1,70 +1,84 @@
-'use client'
-import { useState } from 'react'
-import StrokeTable from '../StrokeTable/StrokeTable'
-import styles from './style.module.css'
-import { tableElements } from '../../utils/mock'
+'use client';
+import { useState, useEffect } from 'react';
+import StrokeTable from '../StrokeTable/StrokeTable';
+import styles from './style.module.css';
+import { useGetPricesQuery } from '@/app/Store/pricesSlice';
+
+type StrokeType = {
+    name: string;
+    cost: number;
+    id: number;
+};
+
 export default function TableComponent() {
-    type StrokeType = {
-        name: string,
-        price: number,
-        id: number
+    const [clicked, setClicked] = useState('Маникюр');
+    const { data = [], isLoading } = useGetPricesQuery(clicked, {
+        selectFromResult: ({ data, isLoading }) => ({ data, isLoading }),
+    });
+
+    const [hover, setHover] = useState('Маникюр');
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        if (!isLoading) {
+            setIsLoaded(true);
+        }
+    }, [isLoading]);
+
+    if (isLoading) {
+        return <div>Loading...</div>;
     }
-    const [clicked, setClicked] = useState(1)
-    const [hover, setHover] = useState(0)
+
     return (
-        <div className={styles.container} id='table'>
+        <div className={styles.container} id="table">
             <div className={styles.pagesContainer}>
                 <div className={styles.textContainer}>
-                    <div
-                        onMouseEnter={() => setHover(1)}
-                        onMouseLeave={() => setHover(0)}
-                        onClick={() => setClicked(1)}
-                        className={
-                            clicked === 1 ? styles.clickedPageText : styles.pageText}>
-                        <p
-                            className={hover === 1 ? styles.hoveredPageText : styles.nothing}
-                        >{'Маникюр'}</p>
-                    </div>
-                    <div
-                        onMouseEnter={() => setHover(2)}
-                        onMouseLeave={() => setHover(0)}
-                        className={
-                            clicked === 2 ? styles.clickedPageText : styles.pageText}
-                        onClick={() => setClicked(2)}
-                    ><p
-                        className={hover === 2 ? styles.hoveredPageText : styles.nothing}
-                    >{'Педикюр'}</p>
-                    </div>
-                    <div
-                        onMouseEnter={() => setHover(3)}
-                        onMouseLeave={() => setHover(0)}
-                        className={
-                            clicked === 3 ? styles.clickedPageText : styles.pageText}
-                        onClick={() => setClicked(3)}
-                    >
-                        <p
-                            className={hover === 3 ? styles.hoveredPageText : styles.nothing}
-                        >{'Дизайн'}</p></div>
+                    {['Маникюр', 'Дизайн'].map((item) => (
+                        <div
+                            key={item}
+                            onMouseEnter={() => setHover(item)}
+                            onMouseLeave={() => setHover('')}
+                            onClick={() => setClicked(item)}
+                            className={
+                                clicked === item
+                                    ? styles.clickedPageText
+                                    : styles.pageText
+                            }
+                        >
+                            <p
+                                className={
+                                    hover === item
+                                        ? styles.hoveredPageText
+                                        : styles.nothing
+                                }
+                            >
+                                {item === 'Маникюр' ? 'Маникюр' : 'Дизайн'}
+                            </p>
+                        </div>
+                    ))}
                 </div>
                 <div className={styles.underDecorations}>
-                    <div className={
-                        clicked === 1 ? styles.decoration1 :
-                            clicked === 2 ? styles.decoration2 :
-                                clicked === 3 ? styles.decoration3 : styles.decoration1
-                    }></div>
+                    <div
+                        className={
+                            clicked === 'Маникюр'
+                                ? styles.decoration1
+                                : styles.decoration2
+                        }
+                    ></div>
                 </div>
             </div>
             <table className={styles.table}>
-                <tbody className={styles.tableBody}>
-                    {tableElements.map((item: StrokeType) => (
+                <tbody className={`${styles.tableBody} ${isLoaded ? styles.tableBodyStaggered : ''}`}>
+                    {Array.isArray(data) && data.map((item: StrokeType) => (
                         <StrokeTable
                             key={item.id}
                             name={item.name}
-                            price={item.price}
+                            cost={item.cost}
+                            id={item.id}
                         />
                     ))}
                 </tbody>
             </table>
         </div>
-    )
+    );
 }

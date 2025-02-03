@@ -40,7 +40,7 @@ export default function VerticalBar() {
                 onMouseEnter={() => setHover(2)}
                 onMouseLeave={() => setHover(0)}
                 target='_'
-                href='https://ttttt.me/osssmanova'
+                href='https://ttttt.me/sashe_nails'
             >
                 <Image
                     className={hover === 2 ? styles.hovered_item : styles.item}

@@ -3,8 +3,10 @@
     width: 100%;
     background-color: #E4D8E2;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100px;
+    padding-left: 12px;
+    padding-right: 24px;
     position: fixed;
     z-index: 100;
 }

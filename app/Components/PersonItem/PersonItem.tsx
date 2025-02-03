@@ -1,10 +1,10 @@
 import styles from './styles.module.css'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 
 type PersonProps = {
-    image: StaticImageData,
+    image: string,
 }
-export default function PersonItem({ image }: PersonProps) {
+export default function PersonProps({ image }: PersonProps) {
     return (
         <div className={styles.container}>
             <div className={styles.imageContainer}>

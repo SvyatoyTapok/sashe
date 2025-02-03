@@ -1,7 +1,5 @@
 'use client'
 import Image from 'next/image';
-import manicure2 from '../../images/manicure2.jpg'
-import manicure1 from '../../images/manicure1.jpg'
 import styles from './styles.module.css'
 import chevronLeft from '../../images/chevronLeft.svg'
 import chevronRight from '../../images/chevronRight.svg'
@@ -40,17 +38,22 @@ export default function GalleryBlock() {
                         className={styles.imageContainer}>
                         <Image
                             className={styles.imageStyle}
-                            src={manicure2} alt='manicure'
+                            src={'http://localhost:4300/images/carousel_1.jpg'} alt='manicure'
+                            width={200}
                             height={400}
                         />
                         <Image
                             className={styles.imageStyle}
-                            src={manicure1} alt='manicure'
+                            src={'http://localhost:4300/images/carousel_2.jpg'}
+                            width={200}
+                            alt='manicure'
                             height={400}
                         />
                         <Image
                             className={styles.imageStyle}
-                            src={manicure2} alt='manicure'
+                            src={'http://localhost:4300/images/carousel_3.jpg'}
+                            alt='manicure'
+                            width={200}
                             height={400}
                         />
                     </div>
