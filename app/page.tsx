@@ -7,11 +7,13 @@ import SectionName from "./Components/SectionName/SectionName"
 import SpecialOfferBlock from "./Components/SpecialOfferBlock/SpecialOfferBlock"
 import GalleryBlock from "./Components/GalleryBlock/GalleryBlock"
 import Footer from "./Components/Footer/Footer"
+import Popup from "./Components/Popup/Popup"
 
 export default function HomePage() {
     return (
         <>
             <FirstBlock />
+            <Popup />
             <SecondBlock />
             <SectionName scrollId='table' text='Услуги и цены' />
             <TableComponent />

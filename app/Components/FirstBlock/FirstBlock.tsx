@@ -42,6 +42,7 @@ export default function FirstBlock() {
                     onMouseLeave={() => setHover(0)}
                     src={'http://localhost:4300/images/big.jpg'}
                     alt={'manicure2'}
+                    priority={true}
                 ></Image>
                 <div className={hover === 1 ? styles.hoveredFirstImage : styles.firstFrame}></div>
                 <Image

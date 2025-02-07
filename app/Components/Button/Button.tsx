@@ -1,7 +1,10 @@
 'use client'
 import { useState } from 'react'
 import styles from './styles.module.css'
+import { openModal } from '@/app/Store/modalSlice'
+import { useDispatch } from 'react-redux';
 type ButtonType = {
+    onClick?: () => void
     width?: number | string
     bgColor?: string
     height?: number | string
@@ -21,12 +24,13 @@ export default function Button({
     borderRadius,
     hoveredColor
 }: ButtonType) {
-
+    const dispatch = useDispatch();
     const [hover, setHover] = useState(false)
     const [isClicked, setClicked] = useState(false)
     const handleClick = () => {
         setClicked(true);
         setTimeout(() => setClicked(false), 100);
+        dispatch(openModal())
     };
     return (
         <div

@@ -6,7 +6,7 @@ const nextConfig = {
         protocol: 'http',
         hostname: 'localhost',
         port: '4300',
-        pathname: '/**', // Разрешить все изображения
+        pathname: '/**',
       },
     ],
   },
