@@ -1,0 +1,29 @@
+.container {
+    margin-top: 12px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    color: black;
+    font-size: 20px;
+    width: 100px;
+    cursor: pointer;
+    transition: all 0.33s;
+}
+
+.activeContainer {
+    transform: scale(0.94);
+    transition: all 0.33s;
+    margin-top: 12px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    color: white;
+    font-size: 20px;
+    width: 100px;
+    cursor: pointer;
+    background-color: #E4D8E2;
+}

@@ -4,6 +4,7 @@ import styles from './styles.module.css'
 import chevronLeft from '../../images/chevronLeft.svg'
 import chevronRight from '../../images/chevronRight.svg'
 import { useState } from 'react';
+
 export default function GalleryBlock() {
     const [currentPosition, setCurrentPosition] = useState(1)
     const [isClicked, setIsClicked] = useState(0)
@@ -30,11 +31,10 @@ export default function GalleryBlock() {
                         alt='left button' />
                 </div>
                 <div className={styles.window}>
-                    <div
-                        style={
-                            currentPosition === 1 ? { transform: 'translateX(0%)' } :
-                                currentPosition === 2 ? { transform: 'translateX(-100%)' } :
-                                    currentPosition === 3 ? { transform: 'translateX(-200%)' } : {}}
+                    <div style={
+                        currentPosition === 1 ? { transform: 'translateX(0%)' } :
+                            currentPosition === 2 ? { transform: 'translateX(-100%)' } :
+                                currentPosition === 3 ? { transform: 'translateX(-200%)' } : {}}
                         className={styles.imageContainer}>
                         <Image
                             className={styles.imageStyle}
@@ -66,7 +66,6 @@ export default function GalleryBlock() {
                         src={chevronRight}
                         alt='right button'
                     /></div>
-
             </div>
             <div className={styles.indicatorContainer}>
                 <div
