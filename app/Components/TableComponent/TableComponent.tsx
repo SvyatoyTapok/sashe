@@ -33,7 +33,7 @@ export default function TableComponent() {
         <div className={styles.container} id="table">
             <div className={styles.pagesContainer}>
                 <div className={styles.textContainer}>
-                    {['Маникюр', 'Дизайн'].map((item) => (
+                    {['Маникюр'].map((item) => (
                         <div
                             key={item}
                             onMouseEnter={() => setHover(item)}
@@ -42,29 +42,18 @@ export default function TableComponent() {
                             className={
                                 clicked === item
                                     ? styles.clickedPageText
-                                    : styles.pageText
-                            }
-                        >
-                            <p
-                                className={
-                                    hover === item
-                                        ? styles.hoveredPageText
-                                        : styles.nothing
-                                }
-                            >
-                                {item === 'Маникюр' ? 'Маникюр' : 'Дизайн'}
+                                    : styles.pageText}>
+                            <p className={
+                                hover === item
+                                    ? styles.hoveredPageText
+                                    : styles.nothing}>
+                                {'Маникюр'}
                             </p>
                         </div>
                     ))}
                 </div>
                 <div className={styles.underDecorations}>
-                    <div
-                        className={
-                            clicked === 'Маникюр'
-                                ? styles.decoration1
-                                : styles.decoration2
-                        }
-                    ></div>
+                    <div className={styles.decoration1}></div>
                 </div>
             </div>
             <table className={styles.table}>
@@ -79,6 +68,9 @@ export default function TableComponent() {
                     ))}
                 </tbody>
             </table>
+            <div className={styles.underTableContainer}>
+                {'🎨 Дизайн ногтей — в подарок!'}
+            </div>
         </div>
     );
 }

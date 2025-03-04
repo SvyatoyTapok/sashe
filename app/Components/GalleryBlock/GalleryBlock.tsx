@@ -4,63 +4,71 @@ import styles from './styles.module.css'
 import chevronLeft from '../../images/chevronLeft.svg'
 import chevronRight from '../../images/chevronRight.svg'
 import { useState } from 'react';
+import { useGetAllGalleryQuery } from '@/app/Store/pricesSlice';
 
 export default function GalleryBlock() {
     const [currentPosition, setCurrentPosition] = useState(1)
-    const [isClicked, setIsClicked] = useState(0)
-    const handleForwardClick = (item: number) => {
-        setIsClicked(item)
-        setTimeout(() => setIsClicked(0), 100)
-        if (currentPosition === 3) { return } else { setCurrentPosition(currentPosition + 1) }
+    const [isClickedLeft, setIsClickedLeft] = useState(false)
+    const [isClickedRight, setIsClickedRight] = useState(false)
+
+
+    const { data: images, error, isLoading } = useGetAllGalleryQuery({});
+    if (isLoading) return <p>Загрузка...</p>;
+    if (error) return <p>Ошибка загрузки галереи</p>;
+
+    const imagesWithId = images.map((image: string, index: number) => ({
+        id: index + 1,
+        image: image,
+    }));
+
+    const handleForwardClick = () => {
+        setIsClickedRight(true)
+        setTimeout(() => setIsClickedRight(false), 100)
+        if (currentPosition === images.length) return
+        { setCurrentPosition(currentPosition + 1) }
+
     }
 
-    const handleBackClick = (item: number) => {
-        setIsClicked(item)
-        setTimeout(() => setIsClicked(0), 100)
-        if (currentPosition === 1) { return } else { setCurrentPosition(currentPosition - 1) }
+    const handleBackClick = () => {
+        setIsClickedLeft(true)
+        setTimeout(() => setIsClickedLeft(false), 100)
+        if (currentPosition === 1) return
+        { setCurrentPosition(currentPosition - 1) }
     }
+
     return (
         <div className={styles.container}>
             <div className={styles.carouselContainer}>
-                <div className={styles.navButton} onClick={() => handleBackClick(1)}>
+                <div className={styles.navButton} onClick={() => handleBackClick()}>
                     <Image
-                        className={isClicked === 1 ? styles.clicked : styles.notClicked}
+                        className={isClickedLeft ? styles.clicked : styles.notClicked}
                         width={60}
                         height={60}
                         src={chevronLeft}
                         alt='left button' />
                 </div>
                 <div className={styles.window}>
-                    <div style={
-                        currentPosition === 1 ? { transform: 'translateX(0%)' } :
-                            currentPosition === 2 ? { transform: 'translateX(-100%)' } :
-                                currentPosition === 3 ? { transform: 'translateX(-200%)' } : {}}
+                    <div
+                        style={{
+                            transform: `translateX(${(currentPosition - 1) * -100}%)`
+                        }}
                         className={styles.imageContainer}>
-                        <Image
-                            className={styles.imageStyle}
-                            src={'http://localhost:4300/images/carousel_1.jpg'} alt='manicure'
-                            width={200}
-                            height={400}
-                        />
-                        <Image
-                            className={styles.imageStyle}
-                            src={'http://localhost:4300/images/carousel_2.jpg'}
-                            width={200}
-                            alt='manicure'
-                            height={400}
-                        />
-                        <Image
-                            className={styles.imageStyle}
-                            src={'http://localhost:4300/images/carousel_3.jpg'}
-                            alt='manicure'
-                            width={200}
-                            height={400}
-                        />
+                        {imagesWithId.map((image: { id: number, image: string }) => (
+
+                            <Image
+                                key={image.id}
+                                className={styles.imageStyle}
+                                src={`http://localhost:4300/images/gallery/${image.image}`} alt='manicure'
+                                width={600}
+                                height={400}
+                            />
+
+                        ))}
                     </div>
                 </div>
-                <div className={styles.navButton} onClick={() => handleForwardClick(2)}>
+                <div className={styles.navButton} onClick={() => handleForwardClick()}>
                     <Image
-                        className={isClicked === 2 ? styles.clicked : styles.notClicked}
+                        className={isClickedRight ? styles.clicked : styles.notClicked}
                         width={60}
                         height={60}
                         src={chevronRight}
@@ -68,15 +76,12 @@ export default function GalleryBlock() {
                     /></div>
             </div>
             <div className={styles.indicatorContainer}>
-                <div
-                    style={currentPosition === 1 ? { backgroundColor: '#B6ACB4' } : {}}
-                    className={styles.indicatorItem}></div>
-                <div
-                    style={currentPosition === 2 ? { backgroundColor: '#B6ACB4' } : {}}
-                    className={styles.indicatorItem}></div>
-                <div
-                    style={currentPosition === 3 ? { backgroundColor: '#B6ACB4' } : {}}
-                    className={styles.indicatorItem}></div>
+                {imagesWithId.map((image: { image: string, id: number }) => (
+                    <div
+                        key={image.id}
+                        style={currentPosition === image.id ? { backgroundColor: '#B6ACB4' } : {}}
+                        className={styles.indicatorItem}></div>
+                ))}
             </div>
         </div>
     );

@@ -6,18 +6,26 @@ import { closeModal } from '@/app/Store/modalSlice';
 import Calendar from 'react-calendar';
 import './Calendar.css';
 import TimeItem from './TimeItem/TimeItem';
+import { useAddBookingMutation } from '../../Store/pricesSlice'
 
 export default function Popup() {
     const dispatch = useDispatch();
     const isOpen = useSelector((state: RootState) => state.modal.isOpen);
     const [value, setValue] = useState(new Date());
+
     const [timeValue, setTimeValue] = useState('10:00');
     const [clicked, setIsClicked] = useState(false);
+    const [addBooking] = useAddBookingMutation();
     const handleClick = () => {
         setIsClicked(true);
         setTimeout(() => {
             setIsClicked(false);
         }, 100);
+        addBooking(
+            {
+                id: value,
+                time: timeValue
+            });
     };
     const nextMonth = new Date();
     nextMonth.setMonth(nextMonth.getMonth() + 2);
