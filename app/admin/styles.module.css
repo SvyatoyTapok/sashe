@@ -1,4 +1,22 @@
 .container {
     padding-top: 100px;
     padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: blueviolet;
+    color: white;
+    border-radius: 6px;
+    width: 100px;
+    height: 40px;
+    justify-self: center;
+}
+
+.mainText {
+    text-align: center;
+    font-size: 64px;
 }
