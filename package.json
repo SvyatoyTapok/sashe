@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@reduxjs/toolkit": "^2.5.1",
+    "@yandex/ymaps3-types": "^1.0.16029232",
     "axios": "^1.7.9",
     "install": "^0.13.0",
     "next": "^15.1.4",

@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@yandex/ymaps3-types"
+    ],
     "target": "ES2017",
     "lib": [
       "dom",
@@ -23,6 +27,9 @@
       }
     ],
     "paths": {
+      "ymaps3": [
+        "./node_modules/@yandex/ymaps3-types"
+      ],
       "@/*": [
         "./*"
       ]

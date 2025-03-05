@@ -1,10 +1,26 @@
+'use client'
 import styles from './styles.module.css';
+import React from 'react';
+import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
+
 export default function Footer() {
+
     return (
         <div className={styles.container}>
             <div className={styles.addressContainer}>
-                <p className={styles.mainText}>Адрес:</p>
-                <a target='_blank' href={'https://yandex.ru/maps/47/nizhny-novgorod/house/ulitsa_strokina_6/YEoYfgJnSkUBQFtsfX53cnVlYw==/?ll=43.857893%2C56.263848&z=17.73'} className={styles.secondText}>ул.Строкина, д.6</a>
+                <p className={styles.mainText}>Адрес: Сазанова 6</p>
+                <YMaps>
+                    <Map
+                        defaultState={{
+                            center: [56.238637, 43.835181],
+                            zoom: 13,
+                        }}
+                        width="100%"
+                        height="350px"
+                    >
+                        <Placemark geometry={[56.238637, 43.835181]} />
+                    </Map>
+                </YMaps>
                 <p className={styles.mainText}>Время работы:</p>
                 <p className={styles.secondText}>Ежедневно с 10:00-22:00 по предварительной записи</p>
             </div>
