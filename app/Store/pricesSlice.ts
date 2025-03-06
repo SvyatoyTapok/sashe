@@ -27,6 +27,12 @@ export const bookingsApi = createApi({
         getLastBooking: builder.query({
             query: () => '/bookings/last',
         }),
+        deleteBooking: builder.mutation({
+            query: (id) => ({
+                url: `bookings/${id}`,
+                method: 'DELETE',
+            }),
+        }),
     }),
 });
 
@@ -47,10 +53,27 @@ export const allGalleryApi = createApi({
         getAllGallery: builder.query({
             query: () => 'images/gallery',
         }),
+        deleteImage: builder.mutation({
+            query: (imageName) => ({
+                url: `images/gallery/${imageName}`,
+                method: 'DELETE',
+            }),
+        }),
+        uploadImage: builder.mutation({
+            query: (file) => {
+                const formData = new FormData();
+                formData.append('file', file);
+                return {
+                    url: 'images/gallery',
+                    method: 'POST',
+                    body: formData,
+                };
+            },
+        }),
     }),
 });
 
 export const { useGetPricesQuery } = pricesApi;
-export const { useAddBookingMutation, useGetLastBookingQuery } = bookingsApi;
+export const { useAddBookingMutation, useGetLastBookingQuery, useDeleteBookingMutation } = bookingsApi;
 export const { useGetBigImageQuery } = bigImageApi;
-export const { useGetAllGalleryQuery } = allGalleryApi;
+export const { useGetAllGalleryQuery, useDeleteImageMutation, useUploadImageMutation } = allGalleryApi;

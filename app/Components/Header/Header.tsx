@@ -2,9 +2,9 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
-import Link from "next/link"; // ✅ Импортируем Next.js Link
+import Link from "next/link";
 import { headerItems } from "@/app/utils/mock";
-import { Link as ScrollLink } from "react-scroll"; // Переименовываем, чтобы не конфликтовало
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Header() {
     const [hover, setHover] = useState(0);
@@ -17,7 +17,6 @@ export default function Header() {
 
     return (
         <div className={styles.container}>
-            {/* ✅ Используем Next.js Link для перехода на главную */}
             <Link href="/" style={{ cursor: "pointer" }}>
                 <Image
                     src={"http://localhost:4300/images/icon.png"}
@@ -27,7 +26,6 @@ export default function Header() {
                 />
             </Link>
 
-            {/* Оставляем react-scroll для прокрутки */}
             {headerItems.map((item) => (
                 <ScrollLink
                     smooth={true}

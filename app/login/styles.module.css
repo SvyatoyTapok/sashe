@@ -27,6 +27,7 @@
 }
 
 .button {
+    cursor: pointer;
     background-color: blueviolet;
     color: white;
     border-radius: 6px;
