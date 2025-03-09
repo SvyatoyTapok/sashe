@@ -9,6 +9,20 @@ export const pricesApi = createApi({
         getPrices: builder.query({
             query: (price_type) => `prices/type/${price_type}`,
         }),
+        deletePrice: builder.mutation({
+            query: (id) => ({
+                url: `prices/${id}`,
+                method: 'DELETE',
+            }),
+        }),
+        addPrice: builder.mutation({
+            query: ({ name, cost, price_type }) => ({
+                url: `prices`,
+                method: 'POST',
+                body: { name, cost, price_type },
+                headers: { 'Content-Type': 'application/json' },
+            }),
+        }),
     }),
 });
 
@@ -73,7 +87,7 @@ export const allGalleryApi = createApi({
     }),
 });
 
-export const { useGetPricesQuery } = pricesApi;
+export const { useGetPricesQuery, useDeletePriceMutation, useAddPriceMutation } = pricesApi;
 export const { useAddBookingMutation, useGetLastBookingQuery, useDeleteBookingMutation } = bookingsApi;
 export const { useGetBigImageQuery } = bigImageApi;
 export const { useGetAllGalleryQuery, useDeleteImageMutation, useUploadImageMutation } = allGalleryApi;
