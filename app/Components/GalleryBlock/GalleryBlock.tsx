@@ -54,13 +54,12 @@ export default function GalleryBlock() {
                         }}
                         className={styles.imageContainer}>
                         {imagesWithId.map((image: { id: number, image: string }) => (
-
                             <Image
                                 key={image.id}
                                 className={styles.imageStyle}
                                 src={`http://localhost:4300/images/gallery/${image.image}`} alt='manicure'
-                                width={600}
-                                height={400}
+                                width={200}
+                                height={700}
                             />
 
                         ))}
