@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { pricesApi } from './pricesSlice';
-import { bigImageApi } from './pricesSlice';
+import { bigImagesApi } from './pricesSlice';
 import modalReducer from './modalSlice';
 import {bookingsApi} from './pricesSlice'
 import { allGalleryApi } from './pricesSlice';
@@ -8,7 +8,7 @@ import { allGalleryApi } from './pricesSlice';
 export const store = configureStore({
     reducer: {
         [pricesApi.reducerPath]: pricesApi.reducer,
-        [bigImageApi.reducerPath]: bigImageApi.reducer,
+        [bigImagesApi.reducerPath]: bigImagesApi.reducer,
         [bookingsApi.reducerPath]: bookingsApi.reducer,
         [allGalleryApi.reducerPath]: allGalleryApi.reducer,
         modal: modalReducer,
@@ -16,7 +16,7 @@ export const store = configureStore({
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat(
             pricesApi.middleware,
-            bigImageApi.middleware,
+            bigImagesApi.middleware,
             bookingsApi.middleware,
             allGalleryApi.middleware,
         ),

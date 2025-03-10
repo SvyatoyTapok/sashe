@@ -6,7 +6,10 @@ import {
     useGetAllGalleryQuery,
     useUploadImageMutation,
     useGetPricesQuery,
-    useDeletePriceMutation
+    useDeletePriceMutation,
+    useDeleteDefaultImageMutation,
+    usePostBigImageMutation,
+    usePostSmallImageMutation,
 } from '../Store/pricesSlice';
 import styles from './styles.module.css'
 import Image from 'next/image';
@@ -15,7 +18,7 @@ import AdminPopup from '../Components/AdminPopup/AdminPopup';
 import { openModal } from '../Store/modalSlice';
 
 export default function AdminPage() {
-
+    const firstImages = ['big.jpg', 'small.jpg']
     const dispatch = useDispatch();
     const { data: prices = [] } = useGetPricesQuery("Маникюр");
 
@@ -26,14 +29,22 @@ export default function AdminPage() {
     };
 
     const { data: images, error, isLoading } = useGetAllGalleryQuery({});
+    const [uploadBig] = usePostBigImageMutation();
+    const [uploadSmall] = usePostSmallImageMutation();
+    const [deleteDefaultImage] = useDeleteDefaultImageMutation();
     const [deletePrice] = useDeletePriceMutation();
     const [deleteImage] = useDeleteImageMutation();
     const [uploadImage] = useUploadImageMutation();
+
     const handleDeletePrice = async (price: number) => {
         await deletePrice(price)
         window.location.reload();
     }
+    const handleDeleteBigImages = (image: string) => {
+        deleteDefaultImage(image)
+        window.location.reload();
 
+    }
     const handleChange = (e: File | null) => {
         if (e) {
             uploadImage(e).then(() => {
@@ -43,6 +54,7 @@ export default function AdminPage() {
             window.location.reload();
         }
     }
+
     if (isLoading) return <p>Загрузка...</p>;
     if (error) return <p>Ошибка загрузки галереи</p>;
 
@@ -50,9 +62,20 @@ export default function AdminPage() {
         id: index + 1,
         image: image,
     }));
+
     const handleDelete = async (image: string) => {
         await deleteImage(image);
         window.location.reload();
+    }
+    const handleUploadDefaultBigImage = (file: File) => {
+        uploadBig(file)
+        window.location.reload();
+
+    }
+    const handleUploadDefaultSmallImage = (file: File) => {
+        uploadSmall(file)
+        window.location.reload();
+
     }
     return (
         <div className={styles.container}>
@@ -69,7 +92,7 @@ export default function AdminPage() {
                             <Image
                                 priority={true}
                                 src={`http://localhost:4300/images/gallery/${image.image}`}
-                                alt="image"
+                                alt={'image'}
                                 width={240}
                                 height={240}
                             />
@@ -78,7 +101,30 @@ export default function AdminPage() {
                     </div>
                 ))}
             </div>
+            <h1 className={styles.mainText}>Блок первых изображений</h1>
+            <div className={styles.firstImagesContainer}>
 
+                {firstImages.map((image: string) => (
+                    <div key={image} className={styles.imageContainer}>
+                        <Link target="_blank" href={`http://localhost:4300/images/${image}`}>
+                            <Image
+                                priority={true}
+                                src={`http://localhost:4300/images/${image}`}
+                                alt={image === 'big' ? "Большого изображения не существует, пожалуйста, загрузите его по кнопке ниже" : "Маленького изображения не существует, пожалуйста, загрузите его по кнопке ниже"}
+                                width={240}
+                                height={240}
+                            />
+                        </Link>
+                        {image === 'big'
+                            ? <input onChange={(e) => e.target.files && handleUploadDefaultSmallImage(e.target.files[0])} accept="image/*" type="file" />
+
+                            : <input onChange={(e) => e.target.files && handleUploadDefaultBigImage(e.target.files[0])} accept="image/*" type="file" />
+
+                        }
+                        <div onClick={() => handleDeleteBigImages(image)} className={styles.deleteButton}>Удалить</div>
+                    </div>
+                ))}
+            </div>
             <div className={styles.bookingsContainer}>
                 {prices.map((priceItem: { id: number, name: string, cost: number }) => (
                     <div

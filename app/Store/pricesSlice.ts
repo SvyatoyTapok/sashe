@@ -50,12 +50,31 @@ export const bookingsApi = createApi({
     }),
 });
 
-export const bigImageApi = createApi({
+export const bigImagesApi = createApi({
     reducerPath: 'bigImageApi',
     baseQuery,
     endpoints: (builder) => ({
-        getBigImage: builder.query({
-            query: () => 'images/IMG_2757.jpeg',
+        postBigImage: builder.mutation({
+            query: (file) => {
+                const formData = new FormData();
+                formData.append('file', file);
+                return {
+                    url: 'images/big',
+                    method: 'POST',
+                    body: formData,
+                };
+            },
+        }),
+        postSmallImage: builder.mutation({
+            query: (file) => {
+                const formData = new FormData();
+                formData.append('file', file);
+                return {
+                    url: 'images/small',
+                    method: 'POST',
+                    body: formData,
+                };
+            },
         }),
     }),
 });
@@ -71,6 +90,12 @@ export const allGalleryApi = createApi({
             query: (imageName) => ({
                 url: `images/gallery/${imageName}`,
                 method: 'DELETE',
+            }),
+        }),
+        deleteDefaultImage: builder.mutation({
+            query: (imageName) => ({
+                url: `images/${imageName}`,
+                method:'DELETE',
             }),
         }),
         uploadImage: builder.mutation({
@@ -89,5 +114,5 @@ export const allGalleryApi = createApi({
 
 export const { useGetPricesQuery, useDeletePriceMutation, useAddPriceMutation } = pricesApi;
 export const { useAddBookingMutation, useGetLastBookingQuery, useDeleteBookingMutation } = bookingsApi;
-export const { useGetBigImageQuery } = bigImageApi;
-export const { useGetAllGalleryQuery, useDeleteImageMutation, useUploadImageMutation } = allGalleryApi;
+export const { usePostSmallImageMutation, usePostBigImageMutation } = bigImagesApi;
+export const { useGetAllGalleryQuery, useDeleteImageMutation, useUploadImageMutation, useDeleteDefaultImageMutation } = allGalleryApi;
