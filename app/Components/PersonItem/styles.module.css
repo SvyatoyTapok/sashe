@@ -24,19 +24,19 @@
 }
 
 .nameText {
-    font-size: 24px;
+    font-size: 34px;
     font-weight: 500;
 }
 
 .subText {
     margin-top: 8px;
     font-family: 'Raleway';
-    font-size: 12px;
+    font-size: 24px;
     font-weight: 100;
 }
 
 .description {
-    margin-top: 16px;
+    margin-top: 22px;
     font-family: 'Raleway';
     font-weight: 200;
     font-size: 15px;

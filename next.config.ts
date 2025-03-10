@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
+  
+  images: { 
+    unoptimized: true,  
     remotePatterns: [
       {
         protocol: 'http',
@@ -9,19 +11,6 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  async headers() {
-    return [
-      {
-        source: '/',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
-          },
-        ],
-      },
-    ];
   },
 };
 

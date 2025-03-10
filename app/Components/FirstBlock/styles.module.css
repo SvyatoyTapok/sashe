@@ -27,7 +27,6 @@
 
 .firstImage {
     margin-top: 50px;
-    background-color: blue;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -48,7 +47,6 @@
 }
 
 .secondImage {
-    background-color: burlywood;
     justify-content: center;
     align-items: center;
     text-align: center;

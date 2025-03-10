@@ -87,10 +87,13 @@ export const allGalleryApi = createApi({
             query: () => 'images/gallery',
         }),
         deleteImage: builder.mutation({
-            query: (imageName) => ({
-                url: `images/gallery/${imageName}`,
-                method: 'DELETE',
+            query:(imageName) => ({
+                url:`images/${imageName}`,
+                method:'DELETE',
             }),
+        }),
+        getAllWorkers: builder.query({
+            query: () => 'images/workers',
         }),
         deleteDefaultImage: builder.mutation({
             query: (imageName) => ({
@@ -115,4 +118,4 @@ export const allGalleryApi = createApi({
 export const { useGetPricesQuery, useDeletePriceMutation, useAddPriceMutation } = pricesApi;
 export const { useAddBookingMutation, useGetLastBookingQuery, useDeleteBookingMutation } = bookingsApi;
 export const { usePostSmallImageMutation, usePostBigImageMutation } = bigImagesApi;
-export const { useGetAllGalleryQuery, useDeleteImageMutation, useUploadImageMutation, useDeleteDefaultImageMutation } = allGalleryApi;
+export const { useDeleteImageMutation, useGetAllGalleryQuery, useGetAllWorkersQuery, useUploadImageMutation, useDeleteDefaultImageMutation } = allGalleryApi;
