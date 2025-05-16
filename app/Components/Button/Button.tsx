@@ -30,7 +30,7 @@ export default function Button({
         setTimeout(() => setClicked(false), 100);
     };
     return (
-        <Link style={{ textDecoration: 'none', color: 'black' }} target="_blank" href='https://t.me/osssmanova'>
+        <Link style={{ textDecoration: 'none', color: 'black' }} target="_blank" href='httpss://t.me/osssmanova'>
             <div
                 onClick={handleClick}
                 onMouseEnter={() => setHover(true)}

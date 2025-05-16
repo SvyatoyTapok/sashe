@@ -40,7 +40,7 @@ export default function FirstBlock() {
                     className={styles.firstImage}
                     onMouseEnter={() => setHover(1)}
                     onMouseLeave={() => setHover(0)}
-                    src={'http://109.237.96.208:4300/images/big.jpg'}
+                    src={'https://sashestudio.ru:4300/images/big.jpg'}
                     alt={'manicure2'}
                     priority={true}
                 ></Image>
@@ -48,7 +48,7 @@ export default function FirstBlock() {
                 <Image
                     width={200}
                     height={200}
-                    src={'http://109.237.96.208:4300/images/small.jpg'}
+                    src={'https://sashestudio.ru:4300/images/small.jpg'}
                     alt={'manicure1'}
                     className={styles.secondImage}
                     onMouseEnter={() => setHover(2)}
