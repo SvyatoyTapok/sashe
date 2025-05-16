@@ -19,7 +19,7 @@ export default function Header() {
         <div className={styles.container}>
             <Link href="/" style={{ cursor: "pointer" }}>
                 <Image
-                    src={"http://sashestudio.ru:4300/images/icon.png"}
+                    src={"http://109.237.96.208:4300/images/icon.png"}
                     width={80}
                     height={80}
                     alt="sticker"
