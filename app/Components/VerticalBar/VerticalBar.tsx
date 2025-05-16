@@ -23,7 +23,7 @@ export default function VerticalBar() {
                 onMouseLeave={() => setHover(0)}
                 onClick={() => handleClick(1)}
                 target='_'
-                href='https://vk.com/ossssmanova'
+                href='https://vk.com/sashe_202'
                 className={isClicked === 1 ? styles.clickedItem : styles.defaultItem}
             >
                 <Image
@@ -40,7 +40,7 @@ export default function VerticalBar() {
                 onMouseEnter={() => setHover(2)}
                 onMouseLeave={() => setHover(0)}
                 target='_'
-                href='https://ttttt.me/sashe_nails'
+                href='https://t.me/sashe_202'
             >
                 <Image
                     className={hover === 2 ? styles.hovered_item : styles.item}

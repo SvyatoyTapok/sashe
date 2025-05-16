@@ -1,33 +1,12 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import StrokeTable from '../StrokeTable/StrokeTable';
 import styles from './style.module.css';
-import { useGetPricesQuery } from '@/app/Store/pricesSlice';
-
-type StrokeType = {
-    name: string;
-    cost: number;
-    id: number;
-};
 
 export default function TableComponent() {
     const [clicked, setClicked] = useState('Маникюр');
-    const { data = [], isLoading } = useGetPricesQuery(clicked, {
-        selectFromResult: ({ data, isLoading }) => ({ data, isLoading }),
-    });
 
     const [hover, setHover] = useState('Маникюр');
-    const [isLoaded, setIsLoaded] = useState(false);
-
-    useEffect(() => {
-        if (!isLoading) {
-            setIsLoaded(true);
-        }
-    }, [isLoading]);
-
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
 
     return (
         <div className={styles.container} id="table">
@@ -57,20 +36,54 @@ export default function TableComponent() {
                 </div>
             </div>
             <table className={styles.table}>
-                <tbody className={`${styles.tableBody} ${isLoaded ? styles.tableBodyStaggered : ''}`}>
-                    {Array.isArray(data) && data.map((item: StrokeType) => (
+                <tbody className={`${styles.tableBody}`}>
+                    {/* {Array.isArray(data) && data.map((item: StrokeType) => (
                         <StrokeTable
                             key={item.id}
                             name={item.name}
                             cost={item.cost}
                             id={item.id}
                         />
-                    ))}
+                        
+                    ))} */}
+                    <StrokeTable
+                        key={1}
+                        name={'✨ Снятие + маникюр + гель лак'}
+                        cost={500}
+                        id={1}
+                    />
+                    <StrokeTable
+                        key={2}
+                        name={'💅 Снятие + маникюр + гель лак + укрепление'}
+                        cost={650}
+                        id={2}
+                    />
+                    <StrokeTable
+                        key={3}
+                        name={'🔥 Коррекция / ремонт / наращивание 1 ногтя'}
+                        cost={50}
+                        id={3}
+                    />
+                    <StrokeTable
+                        key={4}
+                        name={'🍓 Наращивание'}
+                        cost={1000}
+                        id={4}
+                    />
+                    <StrokeTable
+                        key={5}
+                        name={'💋 Коррекция наращивания (моя работа)'}
+                        cost={800}
+                        id={5}
+                    />
+                    <StrokeTable
+                        key={6}
+                        name={'💄 Любой дизайн (1 ноготь)'}
+                        cost={30}
+                        id={6}
+                    />
                 </tbody>
             </table>
-            <div className={styles.underTableContainer}>
-                {'🎨 Дизайн ногтей — в подарок!'}
-            </div>
         </div>
     );
 }
