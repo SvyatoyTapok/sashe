@@ -57,7 +57,7 @@ export default function GalleryBlock() {
                             <Image
                                 key={image.id}
                                 className={styles.imageStyle}
-                                src={`http://109.237.96.208:4300/images/gallery/${image.image}`} alt='manicure'
+                                src={`http://localhost:4300/images/gallery/${image.image}`} alt='manicure'
                                 width={200}
                                 height={700}
                             />
