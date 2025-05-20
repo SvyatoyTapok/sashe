@@ -57,7 +57,7 @@ export default function GalleryBlock() {
                             <Image
                                 key={image.id}
                                 className={styles.imageStyle}
-                                src={`http://localhost:4300/images/gallery/${image.image}`} alt='manicure'
+                                src={`http://sashestudio.ru:4300/images/gallery/${image.image}`} alt='manicure'
                                 width={200}
                                 height={700}
                             />
