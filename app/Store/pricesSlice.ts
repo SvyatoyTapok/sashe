@@ -84,7 +84,7 @@ export const allGalleryApi = createApi({
     baseQuery,
     endpoints: (builder) => ({
         getAllGallery: builder.query({
-            query: () => 'images/gallery',
+            query: () => 'images/gallery/',
         }),
         deleteImage: builder.mutation({
             query:(imageName) => ({
