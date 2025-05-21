@@ -89,10 +89,10 @@ export default function AdminPage() {
             <div className={styles.imagesBlock}>
                 {imagesWithId.map((image: { id: number, image: string }) => (
                     <div key={image.id} className={styles.imageContainer}>
-                        <Link target="_blank" href={`http://sashestudio.ru:4300/images/gallery/${image.image}`}>
+                        <Link target="_blank" href={`http://sashestudio.ru/images/gallery/${image.image}`}>
                             <Image
                                 priority={true}
-                                src={`http://sashestudio.ru:4300/images/gallery/${image.image}`}
+                                src={`http://sashestudio.ru/images/gallery/${image.image}`}
                                 alt={'image'}
                                 width={240}
                                 height={240}
@@ -106,10 +106,10 @@ export default function AdminPage() {
             <div className={styles.firstImagesContainer}>
                 {firstImages.map((image: string) => (
                     <div key={image} className={styles.imageContainer}>
-                        <Link target="_blank" href={`http://sashestudio.ru:4300/images/${image}`}>
+                        <Link target="_blank" href={`http://sashestudio.ru/images/${image}`}>
                             <Image
                                 priority={true}
-                                src={`http://sashestudio.ru:4300/images/${image}`}
+                                src={`http://sashestudio.ru/images/${image}`}
                                 alt={'Изображение'}
                                 width={240}
                                 height={240}
