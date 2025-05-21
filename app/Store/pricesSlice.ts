@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const baseQuery = fetchBaseQuery({ baseUrl: 'http://sashestudio.ru/' });
+const baseQuery = fetchBaseQuery({ baseUrl: 'https://sashestudio.ru/' });
 
 export const pricesApi = createApi({
     reducerPath: 'pricesApi',
